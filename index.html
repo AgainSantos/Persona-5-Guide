@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia não-oficial de Persona 5 Royal: treino de atributos, rotina otimizada e agenda de confidentes, em PT-BR e inglês.">
+  <meta name="theme-color" content="#e0102a">
+  <title>P5R // GUIA DO FANTASMA</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-stripes" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-top-row">
+      <div class="brand-row">
+        <div class="logo-slot">
+          <img src="assets/img/logo.png" alt="Logo" data-fallback>
+          <span class="logo-fallback">P5</span>
+        </div>
+        <div class="eyebrow" data-i18n="eyebrow">Kaitou guia não-oficial</div>
+      </div>
+      <div class="hero-controls">
+        <button class="lang-btn" id="langBtn" type="button"></button>
+        <audio id="bgAudio" loop preload="none">
+          <source src="assets/audio/music.mp3" type="audio/mpeg">
+        </audio>
+        <button class="vinyl-btn" id="vinylBtn" type="button">
+          <svg viewBox="0 0 48 48" class="vinyl-svg" aria-hidden="true">
+            <circle cx="24" cy="24" r="22" fill="#0d0b0d"/>
+            <circle cx="24" cy="24" r="21.2" fill="none" stroke="#3a3339" stroke-width="0.8"/>
+            <circle cx="24" cy="24" r="16.5" fill="none" stroke="#3a3339" stroke-width="0.8"/>
+            <circle cx="24" cy="24" r="11.5" fill="none" stroke="#3a3339" stroke-width="0.8"/>
+            <circle cx="24" cy="24" r="8" fill="var(--red)"/>
+            <circle cx="24" cy="24" r="2" fill="#0d0b0d"/>
+          </svg>
+        </button>
+        <input type="range" id="volumeSlider" class="vol-slider" min="0" max="1" step="0.01" value="0.5">
+      </div>
+    </div>
+    <h1 class="title" data-i18n="title">GUIA DO<br><span>FANTASMA</span></h1>
+    <p class="subtitle" data-i18n="subtitle">Treino de atributos, rotina otimizada e agenda de confidentes de Persona 5 Royal — tudo num só lugar, em pt-br.</p>
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" role="tab" data-tab="atributos" data-i18n="tab1">Treino & Rotina</button>
+      <button class="tab-btn" role="tab" data-tab="confidentes" data-i18n="tab2">Confidentes</button>
+      <button class="tab-btn" role="tab" data-tab="dicas" data-i18n="tab3">Dicas Iniciante</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= TREINO & ROTINA ================= -->
+  <section class="panel active" id="atributos">
+    <h2 class="section-title reveal" data-i18n="attrTitle">Onde treinar cada atributo</h2>
+    <p class="section-note reveal" data-i18n="attrNote">As atividades ficam mais fortes e mais numerosas conforme o ano avança — este guia foca nas fontes mais confiáveis do início ao fim do jogo.</p>
+    <div class="attr-grid" id="attrGrid"></div>
+
+    <h3 class="sub-title reveal" data-i18n="weekTitle">Rotina semanal otimizada</h3>
+    <p class="section-note reveal" data-i18n="weekNote">Um esqueleto de semana para não desperdiçar dias. Ajuste conforme os confidentes que você já desbloqueou.</p>
+    <div class="week-wrap reveal">
+      <table class="week-table" data-i18n="weekTable">
+        <tr><th>Período</th><th>Segunda a Sexta</th><th>Sábado, Domingo e feriados</th></tr>
+        <tr><td><b>Manhã</b></td><td>Aula automática — acerte as perguntas do professor quando puder (rendem atributo de graça).</td><td>Livre. Ótimo horário para começar um dia cheio de Palácio ou uma viagem de confidente (date) mais longa.</td></tr>
+        <tr><td><b>Tarde</b></td><td>Confidente disponível à tarde (prioridade) ou treino de atributo se ninguém estiver livre.</td><td>Continuação do Palácio, treino de atributo ao ar livre (se fizer sol) ou confidente de tarde.</td></tr>
+        <tr><td><b>Noite</b></td><td>LeBlanc (estudar/artesanato) ou confidente noturno — a maioria do elenco fica disponível à noite.</td><td>Confidente noturno, artesanato acumulado da semana ou descanso (recupera SP para o próximo Palácio).</td></tr>
+      </table>
+    </div>
+
+    <h3 class="sub-title reveal" data-i18n="weatherTitle">Priorize pelo clima</h3>
+    <p class="section-note reveal" data-i18n="weatherNote">O jogo mostra a previsão de amanhã na TV/celular a noite anterior — use isso para planejar o dia seguinte.</p>
+    <div class="weather-cols reveal" data-i18n="weatherCols">
+      <div class="weather-card" style="--wc:var(--rain)">
+        <div class="weather-title">🌧 Dias de chuva</div>
+        <ul>
+          <li><b>Artesanato</b> em casa rende pontos extras de Habilidade.</li>
+          <li><b>Sento</b> (banho público) rende mais Coragem que em dias secos.</li>
+          <li>Bom dia para <b>avançar o Palácio</b>: o clima não muda nada lá dentro, então você não perde bônus de atividades externas.</li>
+          <li>Evite contar com Big Bang Burger, batting cage e afins — em dia de chuva não compensam tanto.</li>
+        </ul>
+      </div>
+      <div class="weather-card" style="--wc:var(--sun)">
+        <div class="weather-title">☀️ Dias de sol/limpo</div>
+        <ul>
+          <li>Melhor momento para <b>Big Bang Burger</b>, karaokê e atividades ao ar livre.</li>
+          <li>Guarde esses dias para confidentes que preferem clima aberto, em vez de "gastar" com Palácio.</li>
+          <li>Bom para trabalhos de meio período (floricultura, beef bowl) que rendem atributo + dinheiro.</li>
+          <li>Se não tiver nada de social pendente, é o dia ideal para juntar Habilidade e Charme fora de casa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-title reveal" data-i18n="palaceTitle">Como encaixar os Palácios</h3>
+    <div class="callout reveal" data-i18n="palaceCallout">
+      <b>Regra de ouro:</b> assim que você vê o Tesouro dentro do Palácio, seus atributos sociais param de subir até enviar o cartão de aviso e derrotar o chefe. Termine o treino/confidentes que precisa naquele mês <b>antes</b> de chegar no cofre.<br><br>
+      Prefira reservar dias de chuva (ou dias sem nenhum confidente disponível) para avançar o Palácio, e guarde os dias de sol e os dias em que um confidente-chave aparece para não desperdiçá-los. Também evite deixar o Palácio para os últimos dias antes do prazo — sobrar folga depois de terminar é o que permite social/treino tranquilo no restante do mês.
+    </div>
+
+    <h3 class="sub-title reveal" data-i18n="deadlineTitle">Confidentes com prazo — priorize estes</h3>
+    <div class="callout callout-red reveal" data-i18n="deadlineCallout">
+      Alguns confidentes têm data limite e travam conteúdo se ficarem para trás. Como iniciante, de olho nestes sempre que aparecerem no mapa:
+      <div class="deadline-grid">
+        <div class="deadline-row"><div class="who">Justice (Akechi)</div><div class="why">Aparece raramente e é ligado à história — não deixe passar quando o ícone surgir.</div></div>
+        <div class="deadline-row"><div class="who">Councillor (Maruki)</div><div class="why">Precisa estar avançado até meados de novembro para liberar o terceiro semestre de Royal.</div></div>
+        <div class="deadline-row"><div class="who">Faith (Kasumi)</div><div class="why">Mesmo prazo do Maruki — os dois juntos liberam o conteúdo extra e o final verdadeiro.</div></div>
+        <div class="deadline-row"><div class="who">Sun (Yoshida)</div><div class="why">Também tem prazo (menos crítico), mas dá ótimas habilidades de combate em Mementos/Palácio.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONFIDENTES ================= -->
+  <section class="panel" id="confidentes">
+    <h2 class="section-title" data-i18n="confTitle">Agenda de confidentes</h2>
+    <p class="section-note" data-i18n="confNote">Arcana, atributo mais associado a cada um, local de encontro e período preferencial do dia. Datas de desbloqueio confirmadas; dias específicos da semana podem variar com o progresso da história — confira sempre o ícone do confidente no mapa.</p>
+
+    <div class="filter-row" id="filterRow"></div>
+
+    <div class="carousel">
+      <button class="car-nav car-prev" id="carPrev" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <div class="car-track" id="confTrack" role="list"></div>
+      <button class="car-nav car-next" id="carNext" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="car-progress" aria-hidden="true"><span id="carBar"></span></div>
+
+    <div class="conf-detail" id="confDetail" aria-live="polite"></div>
+
+    <footer class="note" data-i18n="confFooter">
+      * Requisitos de atributo indicam a estatística mais relevante para iniciar ou avançar aquele confidente — os números exatos por rank variam e o jogo sempre avisa quando falta pontuar algo. Confidentes automáticos (história) não exigem atributo. Ícones genéricos são símbolos criados para este guia, não artes oficiais do jogo.<br><br>
+      * Os requisitos de atributo, dias/locais e nomes de habilidade em <b>"Ranks 1–9"</b> foram conferidos em guias dedicados por confidente (RPG Site) — os textos de diálogo e escolhas de conversa não estão incluídos aqui, só o essencial para jogar. Datas e disponibilidade podem variar ligeiramente conforme patches; o card do confidente in-game é sempre a fonte final.
+    </footer>
+  </section>
+
+  <!-- ================= DICAS ================= -->
+  <section class="panel" id="dicas">
+    <h2 class="section-title" data-i18n="tipsTitle">Dicas para jogar de forma otimizada</h2>
+    <p class="section-note" data-i18n="tipsNote">Pequenos hábitos que evitam desperdício de dias e de atributos ao longo do ano letivo.</p>
+    <div class="tip-grid" id="tipGrid"></div>
+  </section>
+
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
